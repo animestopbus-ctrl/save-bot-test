@@ -11,12 +11,9 @@ COPY . /app
 # Set working directory to LastPerson07 (assuming this is where main.py and plugins/ are)
 WORKDIR /app/LastPerson07
 
-# Copy and install requirements (from repo root, but WORKDIR handles)
-COPY ../requirements.txt /app/LastPerson07/
-
-# Install Python dependencies
+# Install Python dependencies (requirements.txt is now at /app/LastPerson07/ after COPY)
 RUN pip3 install wheel
-RUN pip3 install --no-cache-dir -U -r requirements.txt
+RUN pip3 install --no-cache-dir -U -r ../requirements.txt  # Reference from parent dir since WORKDIR is subfolder
 
 # Expose the port (Render will use $PORT env var)
 EXPOSE $PORT
