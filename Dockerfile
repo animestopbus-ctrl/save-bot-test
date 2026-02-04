@@ -5,15 +5,15 @@ RUN apt-get update && apt-get install -y \
     git curl ffmpeg python3-pip wget bash \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Set working directory to /app
+WORKDIR /app
+
 # Copy everything to /app (root files + LastPerson07/)
 COPY . /app
 
-# Set working directory to /app/LastPerson07
-WORKDIR /app/LastPerson07
-
-# Install Python dependencies (requirements.txt is at /app/requirements.txt)
+# Install Python dependencies
 RUN pip3 install wheel
-RUN pip3 install --no-cache-dir -U -r /app/requirements.txt
+RUN pip3 install --no-cache-dir -U -r requirements.txt
 
 # Expose the port (Render will use $PORT env var)
 EXPOSE $PORT
