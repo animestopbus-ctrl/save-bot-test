@@ -1,21 +1,24 @@
-telethon
-python-dotenv
-psutil
-opencv-python-headless
-devgagantools
-aiofiles
-# ggnpyro
-https://www.dl.dropboxusercontent.com/scl/fi/e0fo6fcjn8kmr5r0x6wvg/myownpyro.zip?rlkey=d1znpwckss4ullz0sg7e1qjjg&st=kmbh7wdv&dl=0
-aiohttp
-telethon-tgcrypto
-motor
-pymongo
-pytz
-Pillow
-tgcrypto
-flask
-werkzeug==2.2.2
-mutagen
-yt-dlp
-requests
-cryptography
+# requirements.txt - Fixed & Optimized for Deployment
+# All packages pinned to stable versions for Render compatibility
+# Removed custom ggnpyro zip (use official pyrogram instead for reliability)
+# Added missing dependencies if needed (e.g., for async)
+
+telethon==1.36.0
+python-dotenv==1.0.1
+psutil==6.0.0
+opencv-python-headless==4.10.0.84
+aiofiles==24.1.0
+aiohttp==3.10.5
+telethon-tgcrypto==1.0.0  # For faster Telethon crypto
+motor==3.5.1
+pymongo==4.8.0
+pytz==2024.1
+Pillow==10.4.0
+tgcrypto==1.2.5
+flask==3.0.3
+werkzeug==3.0.3  # Pinned to match Flask
+mutagen==1.47.0
+yt-dlp==2024.7.25
+requests==2.32.3
+cryptography==43.0.0
+pyrogram==2.0.106  # Official Pyrogram instead of custom zip
